@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   mode: "development",
   entry: path.resolve(__dirname, 'djsr/frontend/src/index.js'),
+  devtool: 'inline-source-map',
   output: {
     // options related to how webpack emits results
 
