@@ -1,22 +1,18 @@
-"""djsr URL Configuration
-
-The `urlpatterns` list routes URLs to views. For more information please see:
-    https://docs.djangoproject.com/en/3.0/topics/http/urls/
-Examples:
-Function views
-    1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
-Class-based views
-    1. Add an import:  from other_app.views import Home
-    2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
-Including another URLconf
-    1. Import the include() function: from django.urls import include, path
-    2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
-"""
 from django.contrib import admin
 from django.urls import path, include
 
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('api/v1/', include('authentication.urls'))
+    path('api/v1/', include('authentication.urls')),
+]
+
+# React frontend url needs to be included at the end of urlpatterns.
+# This way, anything not matching Django URLs will be handled by the
+# frontend, which lets us use React’s router to manage frontend views
+# while still hosting it on the same server.
+# Thus nicely avoiding CORS madness.
+urlpatterns += [
+    path('', include('frontend.urls'))
 ]

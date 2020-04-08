@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'rest_framework',
 
     'authentication.apps.AuthenticationConfig',
+    'frontend.apps.FrontendConfig',
 ]
 
 MIDDLEWARE = [
