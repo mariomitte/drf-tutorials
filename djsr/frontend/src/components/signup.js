@@ -7,7 +7,7 @@ class Signup extends Component {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -21,21 +21,21 @@ class Signup extends Component {
   }
 
   handleSubmit(event) {
-    alert('A username and password was submitted: ' + this.state.username + " " + this.state.password);
+    alert('A username and password was submitted.');
     event.preventDefault();
   }
 
   render() {
     return (
       <div>
-        Signup
-        <form
-          className="ui form"
-          onSubmit={this.handleSubmit}
-        >
-          <label>
-            Username:
-            <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
+          Signup
+          <form
+            className="ui form"
+            onSubmit={this.handleSubmit}
+          >
+            <label>
+              Username:
+              <input name="username" type="text" value={this.state.username} onChange={this.handleChange}/>
           </label>
           <label>
             Password:

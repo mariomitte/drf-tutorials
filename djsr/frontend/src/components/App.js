@@ -20,7 +20,7 @@ class App extends Component {
         <div>
           <Header />
           <div className="ui container">
-
+            
             <Switch>
               <Route exact path="/login/" component={Login}/>
               <Route exact path="/signup/" component={Signup}/>
