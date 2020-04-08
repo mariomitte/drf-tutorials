@@ -6,6 +6,9 @@ from authentication import views as authentication_views
 
 
 urlpatterns = [
+    path('user/create/',
+         authentication_views.CustomUserCreate.as_view(),
+         name="create_user"),
     path('token/obtain/',
          authentication_views.CustomTokenPairView.as_view(),
          name='token_create'),  # override sjwt stock token
