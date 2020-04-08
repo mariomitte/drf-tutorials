@@ -5,6 +5,15 @@ from rest_framework.views import APIView
 
 from authentication import serializers
 
+################################################################
+class HelloWorldView(APIView):
+    """
+    Creating and testing a protected view.
+    """
+    def get(self, request):
+        return Response(data={"hello":"world"}, status=status.HTTP_200_OK)
+################################################################
+
 
 class CustomTokenPairView(TokenObtainPairView):
     """
