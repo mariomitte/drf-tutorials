@@ -1,7 +1,7 @@
 from django.urls import path
 from rest_framework_simplejwt import views as jwt_views
 
-from authentication import views as authentication_views
+from authentication import api as authentication_views
 
 
 
